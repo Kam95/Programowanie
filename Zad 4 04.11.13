@@ -1,5 +1,5 @@
 #include <iostream> 
-// (C) Kam
+
 using namespace std;
 
 int main(){
