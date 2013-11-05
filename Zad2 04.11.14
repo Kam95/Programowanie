@@ -1,0 +1,33 @@
+#include <iostream> 
+#include <fstream> 
+#include <cstdlib> 
+using namespace std;
+ 
+int main(){
+	fstream plik; 
+    plik.open("liczby.txt",ios::in);
+    if(plik.good()){
+        cout<<"otwarto plik\n";
+        string tekst;
+      	float tab[14];
+      	int i = 0;
+       //-------------------------------odczyt z pliku
+        while(!plik.eof()){
+            getline(plik, tekst); // z pliku do zmiennej
+            //odwroc(tekst);
+            
+            tab[i]=atof(tekst.c_str()); // przerabia stringa na float
+            cout<<tab[i]<<endl;
+            i++;
+        }
+        plik.close();
+    cout << " " 
+    for(int i = 0; i < 14; i++){
+    	cout << tab[i] << " "; 
+	}
+}
+
+
+    return 0;
+
+}
