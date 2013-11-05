@@ -14,8 +14,7 @@ int main(){
        //-------------------------------odczyt z pliku
         while(!plik.eof()){
             getline(plik, tekst); // z pliku do zmiennej
-            //odwroc(tekst);
-            
+
             tab[i]=atof(tekst.c_str()); // przerabia stringa na float
             cout<<tab[i]<<endl;
             i++;
