@@ -1,0 +1,45 @@
+#include <iostream> 
+// (C) Kam
+using namespace std;
+
+int main(){
+	double tab[5];
+	
+	for(int i = 0; i < 5; i++){
+		cout << "Podaj liczbe: " ;
+		cin >> tab[i]; 
+	}
+	cout << endl;
+	
+	for(int i = 0; i < 5; i++){
+		for(int j = i+1; j < 5; j++){
+			if(tab[i] == tab[j]){
+				cout << "Powtarzaja sie wartosc " << tab[i] << " i " << tab[j] << "." << endl; 	
+			} 
+		}
+	}
+	
+	int ile = 0, j = 4;
+	
+	for(int i = 0; i < 5; i++){
+		cout<<"\n---- i:"<<i<<"  j:"<<j<<" "<<tab[i]<<" "<<tab[j];
+		if(i == j){
+			break;
+		} 
+		if(tab[i] == tab[j]){
+			ile++;
+			j--;
+			continue;
+		}
+		if(tab[i] != tab[j]){
+			break;
+		}		
+	}
+	if(ile == 2){
+		cout << "Tabela jest symetryczna" << endl;
+	} else {
+		cout << "Tabela nie jest symetryczna" << endl;	
+	}
+		
+    return 0;
+}
