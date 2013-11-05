@@ -1,0 +1,48 @@
+#include <iostream> 
+#include <fstream> 
+#include <cstdlib> 
+using namespace std;
+
+int main(){
+	fstream plik; 
+    plik.open("liczby.txt",ios::in);
+    if(plik.good()){
+        cout<<"otwarto plik\n";
+        string tekst;
+      	float tab[14];
+      	int i = 0;
+       //-------------------------------odczyt z pliku
+        while(!plik.eof()){
+            getline(plik, tekst); // z pliku do zmiennej
+            //odwroc(tekst);
+            
+            tab[i]=atof(tekst.c_str()); // przerabia stringa na float
+            cout<<tab[i]<<endl;
+            i++;
+        }
+        plik.close();
+    cout << " ";
+    for(int i = 0; i < 14; i++){
+    	cout << tab[i] << " "; 
+	}
+	int suma = 0, sumado = 0, sumauj = 0;
+	int min = tab[0];
+	int max = tab[0];
+    for(int i = 0; i < 14; i++){
+    	if(tab[i] < min)min = tab[i];
+    	if(tab[i] > max)max = tab[i];
+    	if(tab[i] > 0)sumado += tab[i];
+    	if(tab[i] < 0)sumauj += tab[i];
+    	suma +=tab[i];    	
+	}
+	cout << endl;
+	cout << "Suma: " << suma << endl;
+	cout << "Suma elementow niezerowych: " << suma << endl;
+	cout << "Suma dodatnich: " << sumado << endl; 
+	cout << "Suma ujemnych: " << sumauj << endl;	
+	cout << "Srednia: " << suma/14 << endl;
+	cout << "Min: " << min << endl;
+	cout << "Max: " << max << endl; 	  
+}	
+    return 0;
+}
